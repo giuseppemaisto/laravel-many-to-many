@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\DashboardController;
 
 /*
@@ -30,6 +31,7 @@ Route::middleware(['auth','verified'])->name('admin.')->prefix('admin')->group(f
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/posts',PostController::class)->parameters(['posts'=>'post:slug']);
     Route::resource('/types',TypeController::class)->parameters(['types'=>'type:slug']);
+    Route::resource('/technology',TechnologyController::class)->parameters(['technology'=>'technology:slug']);
 });
 
 
