@@ -20,6 +20,13 @@
                 <p>{{$post->language}}</p>
                 <strong>categoria</strong>
                 <p>{{$post->type ? $post->type->name : 'nessuna categoria selezionata'}}</p>
+                <p><strong>tecnologie</strong>
+                @forelse($post->technologies as $technology)
+                <p>{{$technology->name}}</p>
+                @empty
+                <p>nessuna tecnelogia selezionata</p> 
+                @endforelse
+                </p>
                 <strong>descrizione</strong>
                 <p>{{$post->description}}</p>
             </div>

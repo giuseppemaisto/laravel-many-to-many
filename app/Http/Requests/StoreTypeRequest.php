@@ -27,4 +27,10 @@ class StoreTypeRequest extends FormRequest
             'name'=>['required', 'unique:types',]
         ];
     }
+    public function messages(){
+        return[
+            'name.required' => 'titolo obbligatorio',
+            'name.unique' => 'categoria già presente',
+        ];
+    }
 }

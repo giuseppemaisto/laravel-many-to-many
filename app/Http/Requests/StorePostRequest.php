@@ -31,4 +31,14 @@ class StorePostRequest extends FormRequest
             'technologies'=>['exists:technologies,id'],
         ];
     }
+
+    public function messages(){
+        return[
+            'title.required'=>'titolo obbligatorio',
+            'title.unique' => 'titolo già presente',
+            'title.max' => 'il titolo deve essere di massimo :max caratteri',
+            'type_id.exists' => 'non valido',
+            'technologies' => 'la tecnologia non è valida',
+        ];
+    }
 }
