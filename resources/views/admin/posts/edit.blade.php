@@ -44,6 +44,26 @@
                     </select>
                 
                 </div>
+
+                <div class="form-group my-3">
+                    <label class="control-label">
+                        tecnologie
+                    </label>
+                    @foreach ($technologies as $technology)
+                    <div class="form-check @error('technologies') is-invalid @enderror">
+
+                    @if($errors->any())
+                    <input class="form-check-input" type="checkbox" value="{{$technology->id}}" name="technologies[]" {{in_array($technology->id, old('technologies', [])) ? 'checked' : ''}}>
+                    <label class="form-check-label">{{$technology->name}}</label>
+                    @else
+                    <input class="form-check-input" type="checkbox" value="{{$technology->id}}" name="technologies[]" {{$post->technologies->contains($technology) ? 'checked' : ''}}>
+                    <label> {{$technology->name}}</label>
+                    
+                    @endif
+                    </div>
+
+                    @endforeach
+                </div>
                 
 
                 <div class="form-group my-3">
