@@ -68,6 +68,13 @@
                                 </a>
                             </li>
 
+                            <li class="nav-item">
+                                
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.technology.index' ? 'bg-secondary' : '' }}" href="{{route('admin.technology.index') }}">
+                                    <i class="fa-solid fa-tag fa-lg fa-fw"></i> tecnologie
+                                </a>
+                            </li>
+
                         </ul>
 
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTechnologyRequest;
 use App\Http\Requests\UpdateTechnologyRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Technology;
 
 class TechnologyController extends Controller
@@ -15,7 +16,8 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $technologies = technology::all();
+        return view('admin.technologies.index', compact('technologies'));
     }
 
     /**

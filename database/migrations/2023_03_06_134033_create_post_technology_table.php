@@ -18,11 +18,11 @@ return new class extends Migration
 
             //colonna per il post 
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')->cascateOnDelete();
 
             //colonna per technology
             $table->unsignedBigInteger('technology_id');
-            $table->foreign('technology_id')->references('id')->on('technologies');
+            $table->foreign('technology_id')->references('id')->on('technologies')->cascateOnDelete();
             $table->timestamps();
         });
     }

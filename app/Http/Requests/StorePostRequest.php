@@ -28,6 +28,7 @@ class StorePostRequest extends FormRequest
             'language'=>['required'],
             'description'=>['nullable'],
             'type_id'=>['nullable','exists:types,id'],
+            'technologies'=>['exists:technologies,id'],
         ];
     }
 }
